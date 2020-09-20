@@ -79,12 +79,17 @@ def sendFeedback(token, userId, captchaId, captchaAnswer, comment, rating):
         headers.update(tokenHeader)
 
     data = {
-        "UserId": userId,
         "captchaId": captchaId,
         "captcha": captchaAnswer,
         "comment": comment,
         "rating": rating
     }
+
+    if (userId):
+        userIdData = {
+            "UserId": userId
+        }
+        data.update(userIdData)
 
     res = post(url, json=data, headers=headers)
 
