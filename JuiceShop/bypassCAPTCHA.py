@@ -2,7 +2,7 @@
 import json
 from requests import *
 
-host        = "kali"
+host        = "127.0.0.1"
 port        = 3000
 user        = "admin@juice-sh.op"
 password    = "admin123"
